@@ -1,0 +1,30 @@
+mixin comment(data)
+    .comment
+        .name= data.name
+        .age= data.age
+
+
+
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title Probando pug!
+    body
+    title Probando Pug
+    h1 Bienvenido a mi página!
+    - const word = "Click me"
+    form(action="", method="post")
+        input(type="text", name="")
+        input(type="text", name="")
+        input(type="button", value=word)
+    
+
+    //- p #{users[0].name}
+    //- ul
+    //-     each user in users
+    //-         li= user.name + " de " + user.age + " años"
+
+    each user in users
+        +comment(user)
